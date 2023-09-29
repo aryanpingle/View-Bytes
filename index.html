@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="input-file" id="input-file">
+    <div id="bytes" style="margin: auto; font-family: 'Courier New', Courier, monospace; width: 18ch;"></div>
+
+    <script>
+        document.querySelector("#input-file").onchange = function() {
+            let file = this.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const resultArray = new Uint8Array(event.target.result);
+                const NUMBER_OF_BYTES = 100;
+
+                const hexString = Array.from(resultArray.slice(0, NUMBER_OF_BYTES), byte => byte.toString(16).padStart(2, '0')).join(' ');
+                document.getElementById('bytes').innerHTML = hexString;
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+    </script>
+</body>
+</html>
