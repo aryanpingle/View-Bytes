@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    background-color: beige;
+}
+
+@media (min-width: 720px) {
+    body {
+        height: 100vh;
+    }
+}
+
+#bytes {
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    width: 36ch;
+}
+
+.drop-file-section {
+    position: absolute;
+    margin: 1em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: 900;
+    opacity: 0;
+    transition: opacity 250ms ease;
+    user-select: none;
+    pointer-events: none;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    border: 2px dashed black;
+}
+
+.drop-file-section.shown {
+    opacity: 1;
+}
