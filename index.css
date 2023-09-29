@@ -10,7 +10,7 @@ body {
     position: relative;
     margin: 0;
     padding: 1rem;
-    background-color: beige;
+    background-color: navajowhite;
 }
 
 @media (min-width: 720px) {
@@ -19,10 +19,25 @@ body {
     }
 }
 
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.representation-section {
+    margin: 1em;
+    flex: 1 0 0;
+    /* background-color: cadetblue; */
+    font-size: 2rem;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
 #bytes {
     margin: auto;
-    font-family: 'Courier New', Courier, monospace;
-    width: 36ch;
 }
 
 .drop-file-section {
